@@ -6,9 +6,12 @@
  * Creation Time: 8:15:10 PM<br/>
  * @author DucBui<br/>
  */
-package com.bmduc.eshop.hibernate.dao;
+package com.bmduc.eshop.hibernate.domain;
 
-import java.util.List;
+import com.bmduc.eshop.hibernate.dao.User;
+import javax.naming.AuthenticationException;
+import javax.persistence.EntityNotFoundException;
+import com.bmduc.eshop.hibernate.dao.GenericDao;
 
 /**
  * ####################################################<br/>
@@ -18,9 +21,8 @@ import java.util.List;
  * Creation Time: 8:15:10 PM<br/>
  * @author DucBui<br/>
  */
-public interface GenericDao<T> {
-	public T get(Long id);
-	public List<T> getAll();
-	public void save(T object);
-	public void delete(T object);
+public interface UserDao extends GenericDao<User> {
+	public User getUserByUsername(String username) throws EntityNotFoundException;
+
+	public User authenticateUser(String username, String password) throws AuthenticationException;
 }
