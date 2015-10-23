@@ -22,5 +22,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ES_SHOP_CONFIGURATION")
 public class ShopConfiguration {
-	
+	private long id;
+	private Shop shop;
+	private String logo;
+	private String header;
+	private String footer;
+	private Background background;
+	private UI ui;
+	private String address;
+	private String introduction;
+	private String policy;
+	private int accessAmount;
+	private String email;
 }
