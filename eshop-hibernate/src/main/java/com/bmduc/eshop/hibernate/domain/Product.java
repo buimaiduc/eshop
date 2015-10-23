@@ -2,15 +2,16 @@
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Sep 28, 2015<br/>
- * Creation Time: 8:15:10 PM<br/>
+ * Creation date: Oct 23, 2015<br/>
+ * Creation Time: 6:23:33 PM<br/>
  * @author DucBui<br/>
  */
-package com.bmduc.eshop.hibernate.dao;
+package com.bmduc.eshop.hibernate.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,47 +19,43 @@ import javax.persistence.Table;
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Sep 28, 2015<br/>
- * Creation Time: 8:15:10 PM<br/>
+ * Creation date: Oct 23, 2015<br/>
+ * Creation Time: 6:23:33 PM<br/>
  * @author DucBui<br/>
  */
 @Entity
-@Table(name="PROVINCE_CODE")
-public class ProvinceCode {
-	@Id
-	@Column(name="PROVINCE_CODE_ID")
-	@GeneratedValue
-	private Long id;
-	
-	@Column(name="PROVINCE_CODE_NAME")
+@Table(name = "ES_PRODUCT")
+public class Product {
+	private long id;
 	private String name;
+	private boolean actvive;
 	
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "PRODUCT_ID")
+	public long getId() {
 		return id;
 	}
 	
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	/**
-	 * @return the name
-	 */
+	@Column(name = "PRODUCT_NAME")
 	public String getName() {
 		return name;
 	}
 	
-	/**
-	 * @param name the name to set
-	 */
+	@Column(name = "PRODUCT_ACTIVE")
+	public boolean isActvive() {
+		return actvive;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	public void setActvive(boolean actvive) {
+		this.actvive = actvive;
+	}
 }

@@ -2,21 +2,20 @@
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Sep 28, 2015<br/>
- * Creation Time: 8:15:10 PM<br/>
+ * Creation date: Oct 23, 2015<br/>
+ * Creation Time: 6:39:16 PM<br/>
  * @author DucBui<br/>
  */
-package com.bmduc.eshop.hibernate.dao;
+package com.bmduc.eshop.hibernate.domain;
 
 /**
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Sep 28, 2015<br/>
- * Creation Time: 8:15:10 PM<br/>
+ * Creation date: Oct 23, 2015<br/>
+ * Creation Time: 6:39:16 PM<br/>
  * @author DucBui<br/>
  */
-public enum Gender {
-	Male,
-	Female;
+public class ProductProvider {
+
 }

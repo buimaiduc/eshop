@@ -16,8 +16,8 @@ import javax.persistence.EntityNotFoundException;
 import org.hibernate.Query;
 
 import com.bmduc.eshop.hibernate.dao.AbstractGenericDao;
-import com.bmduc.eshop.hibernate.dao.User;
-import com.bmduc.eshop.hibernate.domain.UserDao;
+import com.bmduc.eshop.hibernate.dao.UserDao;
+import com.bmduc.eshop.hibernate.domain.User;
 
 /**
  * ####################################################<br/>
