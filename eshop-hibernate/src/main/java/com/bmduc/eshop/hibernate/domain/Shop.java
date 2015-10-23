@@ -35,4 +35,6 @@ public class Shop {
 	private String address;
 	private String email;
 	private ProvinceCode provinceCode;
+	
+	
 }
