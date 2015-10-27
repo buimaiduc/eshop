@@ -2,8 +2,8 @@
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Oct 24, 2015<br/>
- * Creation Time: 8:45:03 AM<br/>
+ * Creation date: Oct 27, 2015<br/>
+ * Creation Time: 10:38:45 PM<br/>
  * @author ducb<br/>
  */
 package com.bmduc.eshop.hibernate.domain;
@@ -24,54 +24,56 @@ import javax.persistence.TemporalType;
  * ####################################################<br/>
  *   Copyright © Duc Bui 2015-2016<br/>
  * ####################################################<br/>
- * Creation date: Oct 24, 2015<br/>
- * Creation Time: 8:45:03 AM<br/>
+ * Creation date: Oct 27, 2015<br/>
+ * Creation Time: 10:38:45 PM<br/>
  * @author ducb<br/>
  */
 @Entity
-@Table(name = "ES_PRODUCT_EVALUATION")
-public class ProductEvaluation {
+@Table(name = "ES_QUESTION")
+public class Question {
 	private long id;
 	private String subject;
-	private int marks;
-	private String pros;
-	private String cons;
-	private String general;
-	private User user;
-	private Product product;
+	private String body;
 	private Date postedDate;
+	private Date updatedDate;
+	private FirstType firstType;
+	private User user;
+	private int watchedQuantity;
 	private boolean active;
 	
 	@Id
 	@GeneratedValue
-	@Column(name = "PRODUCT_EVALUATION_ID")
+	@Column(name = "QUESTION_ID")
 	public long getId() {
 		return id;
 	}
 	
-	@Column(name = "PRODUCT_EVALUATION_SUBJECT")
+	@Column(name = "QUESTION_SUBJECT")
 	public String getSubject() {
 		return subject;
 	}
 	
-	@Column(name = "PRODUCT_EVALUATION_SUBJECT")
-	public int getMarks() {
-		return marks;
+	@Column(name = "QUESTION_BODY")
+	public String getBody() {
+		return body;
 	}
 	
-	@Column(name = "PRODUCT_EVALUATION_PROS")
-	public String getPros() {
-		return pros;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "QUESTION_POSTED_DATE")
+	public Date getPostedDate() {
+		return postedDate;
 	}
 	
-	@Column(name = "PRODUCT_EVALUATION_CONS")
-	public String getCons() {
-		return cons;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "QUESTION_UPDATED_DATE")
+	public Date getUpdatedDate() {
+		return updatedDate;
 	}
 	
-	@Column(name = "PRODUCT_EVALUATION_GENERAL")
-	public String getGeneral() {
-		return general;
+	@ManyToOne
+	@JoinColumn(name = "FIRST_TYPE_ID")
+	public FirstType getFirstType() {
+		return firstType;
 	}
 	
 	@ManyToOne
@@ -80,19 +82,12 @@ public class ProductEvaluation {
 		return user;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "PRODUCT_ID")
-	public Product getProduct() {
-		return product;
+	@Column(name = "QUESTION_WATCHED_QUANTITY")
+	public int getWatchedQuantity() {
+		return watchedQuantity;
 	}
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "PRODUCT_EVALUATION_POSTED_DATE")
-	public Date getPostedDate() {
-		return postedDate;
-	}
-	
-	@Column(name = "PRODUCT_EVALUATION_ACTIVE")
+	@Column(name = "QUESTION_ACTIVE")
 	public boolean isActive() {
 		return active;
 	}
@@ -105,32 +100,28 @@ public class ProductEvaluation {
 		this.subject = subject;
 	}
 	
-	public void setMarks(int marks) {
-		this.marks = marks;
+	public void setBody(String body) {
+		this.body = body;
 	}
 	
-	public void setPros(String pros) {
-		this.pros = pros;
+	public void setPostedDate(Date postedDate) {
+		this.postedDate = postedDate;
 	}
 	
-	public void setCons(String cons) {
-		this.cons = cons;
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 	
-	public void setGeneral(String general) {
-		this.general = general;
+	public void setFirstType(FirstType firstType) {
+		this.firstType = firstType;
 	}
 	
 	public void setUser(User user) {
 		this.user = user;
 	}
 	
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-	
-	public void setPostedDate(Date postedDate) {
-		this.postedDate = postedDate;
+	public void setWatchedQuantity(int watchedQuantity) {
+		this.watchedQuantity = watchedQuantity;
 	}
 	
 	public void setActive(boolean active) {

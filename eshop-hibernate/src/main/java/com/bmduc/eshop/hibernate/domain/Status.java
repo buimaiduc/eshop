@@ -24,19 +24,19 @@ import javax.persistence.Table;
  * @author DucBui<br/>
  */
 @Entity
-@Table(name = "ES_PRODUCT_STATUS")
-public class ProductStatus {
+@Table(name = "ES_STATUS")
+public class Status {
 	private long id;
 	private String name;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "PRODUCT_STATUS_ID")
+	@Column(name = "STATUS_ID")
 	public long getId() {
 		return id;
 	}
 	
-	@Column(name = "PRODUCT_STATUS_NAME")
+	@Column(name = "STATUS_NAME")
 	public String getName() {
 		return name;
 	}

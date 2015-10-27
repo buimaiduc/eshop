@@ -43,7 +43,7 @@ public class ProductDetail {
 	private int watchedQuantity;
 	private int boughtQuantity;
 	private ProductProvider productProvider;
-	private ProductStatus productStatus;
+	private Status productStatus;
 	private float vat;
 	private String link;
 	private float ensurance;
@@ -113,7 +113,7 @@ public class ProductDetail {
 	
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_STATUS_ID")
-	public ProductStatus getProductStatus() {
+	public Status getProductStatus() {
 		return productStatus;
 	}
 	
@@ -187,7 +187,7 @@ public class ProductDetail {
 		this.productProvider = productProvider;
 	}
 	
-	public void setProductStatus(ProductStatus productStatus) {
+	public void setProductStatus(Status productStatus) {
 		this.productStatus = productStatus;
 	}
 	
