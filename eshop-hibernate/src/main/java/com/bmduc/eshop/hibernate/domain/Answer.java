@@ -30,7 +30,7 @@ import javax.persistence.TemporalType;
  * @author ducb<br/>
  */
 @Entity
-@Table(name = "ES_ANSWER") 
+@Table(name = "ES_ANSWER")
 public class Answer {
 	private long id;
 	private String content;
